@@ -19,4 +19,9 @@ Criar um novo usuário para acessar sistema de cadastro de contas  e incluir dif
 
 *  Tela de Cadastro de usuário.
 
-[logo]: img/markdown_logo.png
+
+![alt text](img/markdown_logo.png)
+
+
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
