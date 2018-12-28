@@ -13,15 +13,32 @@ Somos uma startup do ramo financeiro e precisamos testar nossa aplicação web, 
 
 Abaixo, os critérios a serem considerados:
 
-#### Critério de Aceite
-
-Criar um novo usuário para acessar sistema de cadastro de contas  e incluir diferentes tipos de bancos, financeiras e validar a mensagem de inclusão da conta com sucesso.
-
-*  Tela de Cadastro de usuário.
+#### Métricas de Avaliação
 
 
-![alt text](img/markdown_logo.png)
+
+1. Indentação do código
+    * Organização do código (//Comentários)
+    * Nomenclatura das classes e variáveis seguindo a ação do site, ou seja, 
+                
+2. Lógica aplicada (Estrutura das classes, métodos)
+    * Separação por tipo classes
+                
+
+3. Organização de métodos por tipo (Tela, Link, Campos, Botões, etc...)
+    * Fechamento do WebDriver (Chrome)
+
+4. Coleta de evidências
 
 
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
+5. Script funcional
+    * A automação seguindo os passos determinados
+
+                
+### Informações Adicionais
+
+Criar três classes com os respectivos nomes: Login, Menu e Cadastro.
+
+Cada classe terá a ação correspondente da sua tela.
+
+Coleta das evidências para o cadastro com sucesso e conta já existente, (Teste negativo).
