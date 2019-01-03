@@ -56,8 +56,8 @@ public class RunAplicacao {
 	public static Aplicacao obtemDados(WebDriver driver) throws SiteNotFoundException, Exception {
 
 		inicializaParametros();
-		
-		//Verifica se URL está acessivel através de um ping.
+
+		// Verifica se URL está acessivel através de um ping.
 		RunAplicacao.flag_Preenchido = false;
 		if (verificaStatusOnline) {
 			if (!Util.verificaSeUrlEstaOnline(RunAplicacao.UrlAplicacao)) {
@@ -65,55 +65,60 @@ public class RunAplicacao {
 						+ (SLEEP_TIMEOUT / 1000) + "s.  URL acessada:" + RunAplicacao.UrlAplicacao);
 			}
 		}
-		driver.get(RunAplicacao.UrlAplicacao);
+	driver.get(RunAplicacao.UrlAplicacao);
         
-        // --------------------------------------------------------------------------------------------------
-        // ---------------------------------- Objetos mapeados da tela login --------------------------------
-        // --------------------------------------------------------------------------------------------------
-        
-        //usuário: seuemail@yaman.com.br
-        WebElement userInput = driver.findElement(By.xpath(".//*[@id='email']"));
-        userInput.sendKeys("frediroldan@yaman.com.br");
-        
-        //senha: sua senha
-        WebElement pwdInput = driver.findElement(By.xpath(".//*[@id='senha']"));
-        pwdInput.sendKeys("automacao");
 
-        //Botão Entrar
-        wait = new WebDriverWait(driver, 1);
-        WebElement btnEntrar = driver.findElement(By.xpath("/html/body/div[2]/form/button"));
-        btnEntrar.click();
+	/**
+	 * -------------------------------------------------------------------------------------------
+	 * ============================ OBJETOS MAPEADOS DA TELA LOGIN ===============================
+	 * -------------------------------------------------------------------------------------------
+	 */
+	    //usuário: seuemail@yaman.com.br
+	    WebElement userInput = driver.findElement(By.xpath(".//*[@id='email']"));
+	    userInput.sendKeys("frediroldan@yaman.com.br");
+	    
+	    //senha: sua senha
+	    WebElement pwdInput = driver.findElement(By.xpath(".//*[@id='senha']"));
+	    pwdInput.sendKeys("automacao");
+	
+	    //Botão Entrar
+	    wait = new WebDriverWait(driver, 1);
+	    WebElement btnEntrar = driver.findElement(By.xpath("/html/body/div[2]/form/button"));
+	    btnEntrar.click();
         
+   
+    /**
+	 * -------------------------------------------------------------------------------------------
+	 * ================== OBJETOS MAPEADOS DO MENU> CONTAS - SUBMENU> ADICIONAR  =================
+	 * -------------------------------------------------------------------------------------------
+	 */
+	    //Menu Contas
+	    wait = new WebDriverWait(driver, 1);
+	    WebElement menuContas = driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul/li[2]"));
+	    menuContas.click();
+	    
+	    //SubMenu Adicionar
+	    wait = new WebDriverWait(driver, 1);
+	    WebElement subMenuAdd = driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul/li[2]/ul/li[1]/a"));
+	    subMenuAdd.click();
         
-        // --------------------------------------------------------------------------------------------------
-        // ---------------------- Objetos mapeados do Menu> Contas SubMenu> Adicionar -----------------------
-        // --------------------------------------------------------------------------------------------------
-        
-        //Menu Contas
-        wait = new WebDriverWait(driver, 1);
-        WebElement menuContas = driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul/li[2]"));
-        menuContas.click();
-        
-        //SubMenu Adicionar
-        wait = new WebDriverWait(driver, 1);
-        WebElement subMenuAdd = driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul/li[2]/ul/li[1]/a"));
-        subMenuAdd.click();
-        
-        // --------------------------------------------------------------------------------------------------
-        // ------------------------------- Objetos mapeados da tela Adicionar ------------------------------
-        // --------------------------------------------------------------------------------------------------
 
+    /**
+	 * -------------------------------------------------------------------------------------------
+	 * ========================== OBJETOS MAPEADOS DA TELA ADICIONAR =============================
+	 * -------------------------------------------------------------------------------------------
+	 */
         //Campo Nome
         wait = new WebDriverWait(driver, 1);
-        driver.findElement(By.xpath(".//*[@id='nome']")).sendKeys("itaú BBA");
+        driver.findElement(By.xpath(".//*[@id='nome']")).sendKeys("Conta Poupança");
         
         //Botão Salvar
         wait = new WebDriverWait(driver, 1);
         WebElement btnSalvar = driver.findElement(By.xpath(".//*[@class='btn btn-primary']"));
         btnSalvar.click();
 
-        wait.wait();
         driver.close();
+        driver.quit();
 		
 	    RunAplicacao.flag_Preenchido = true;
 	    return (null);
