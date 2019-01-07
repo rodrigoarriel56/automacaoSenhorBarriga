@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.xalan.xsltc.compiler.util.Util;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -21,6 +22,7 @@ public class ContaExistente {
     	
     	// Diretório com webdrivers (*Chrome, Firefox e IE).
         System.setProperty("webdriver.chrome.driver", "src/main/resources/webdriver/chromedriver.exe");
+        
         
         // Instancia chromeDriver e webDriverWait
         WebDriver driver = new ChromeDriver();
