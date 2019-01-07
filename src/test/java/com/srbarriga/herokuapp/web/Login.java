@@ -21,8 +21,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Login {
 
 
-	//private boolean screenShot;
-
 	@Test
     public void CT02_testeLogin() throws Exception {
     	
@@ -33,8 +31,6 @@ public class Login {
         // Instancia chromeDriver e webDriverWait
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        //Utils screen = new Utils();
-        
         
         // Com "implicitlyWait" é permitido a espera por qualquer comando no restante do código, 
         // onde se um elemento não estiver disponível, ele aguarda até o tempo definido no comando.
@@ -49,7 +45,6 @@ public class Login {
         driver.findElement(By.xpath("//label[contains(text(),'Email')]/following::input[1]")).sendKeys("automacao@yaman.com.br");
         driver.findElement(By.xpath("//label[contains(text(),'Senha')]/following::input")).sendKeys("automacao");
         driver.findElement(By.xpath("//*[contains(text(),'Entrar')]")).click();
-        //screenShot = Utils.getScreenShot(driver, null);
         
         // Valida mensagem de Bem Vindo após o Login com o print da tela.
         driver.findElement(By.xpath("//*[contains(text(),'Bem vindo, automacao!')]"));
