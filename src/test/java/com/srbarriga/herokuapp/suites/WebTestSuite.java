@@ -11,7 +11,7 @@ import com.srbarriga.herokuapp.web.CadastroConta;
 
 /**
  * Suite de teste para o pacote web
- * @author Fredi Roldan <fredi.roldan@yaman.com.br>
+ * @author Bruno Cesar Bianchini Gouveia
  */
 @RunWith(Suite.class)
 @SuiteClasses(
